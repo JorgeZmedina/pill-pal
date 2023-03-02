@@ -80,7 +80,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
-    background: rgb(144, 215, 255);
+    background:whitesmoke;
     position: sticky;
     top: 0;
     left: 0;
@@ -127,6 +127,11 @@ body {
 #navbar li a i {
     font-weight: 500;
     font-size: 20px;
+}
+
+.pilllogo{
+    height: 100px;
+    width: 100px;
 }
 
 #mobile {
@@ -497,6 +502,8 @@ footer {
 
 footer .logo {
     margin-bottom: 30px;
+    height: 100px;
+    width: 100px;
 }
 
 footer .follow {
