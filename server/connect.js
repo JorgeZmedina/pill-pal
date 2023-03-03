@@ -2,10 +2,13 @@ const express = require('express');
 const app = express();
 const drugLabel = require('../openfda/app');
 const path = require('path');
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../pill-pal/index/index.html'));
+    res.sendFile(path.join(__dirname, '../index/index.html'));
 });
 
 app.post('/search', (req, res) => {
