@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-// const db = require('./src/config/database'); // FIXME: uncomment me
+const db = require('./src/config/database');
 const drugRoutes = require('./src/routes/drugRoutes');
 const axios = require('axios');
 const path = require('path');
@@ -32,11 +32,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-// FIXME: uncomment block
 // Database connection
-// db.authenticate()
-//   .then(() => console.log('Database connected...'))
-//   .catch(err => console.log('Error: ' + err));
+db.authenticate()
+  .then(() => console.log('Database connected...'))
+  .catch(err => console.log('Error: ' + err));
 
 // Drug routes
 app.use('/drugs', drugRoutes);
@@ -68,10 +67,5 @@ app.get('/api/data', (req, res) => {
       res.status(500).send('Error fetching data from the front-end');
     });
 });
-//trroubleshooting static files
-
-// app.use(express.static('public'));
-// app.use(express.static(path.join(__dirname, 'public/index.css')));
-// app.use(express.static(path.join(__dirname, '../index.css')));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
