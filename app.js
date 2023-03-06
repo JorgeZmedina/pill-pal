@@ -12,9 +12,12 @@ const app = express();
 const port = process.env.PORT || 3100;
 
 //trying to connect to the browser
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public', 'ggg.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
 
 
 app.get('/api/users', (req, res) => {
@@ -27,6 +30,7 @@ app.use(morgan('dev'));
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // Database connection
 db.authenticate()
@@ -63,11 +67,5 @@ app.get('/api/data', (req, res) => {
       res.status(500).send('Error fetching data from the front-end');
     });
 });
-//trroubleshooting static files
-
-app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public/ggg.css')));
-app.use(express.static(path.join(__dirname, '../ggg.css')));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
