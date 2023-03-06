@@ -1,17 +1,28 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const db = require('./config/database');
-const drugRoutes = require('./routes/drugRoutes');
-//the actual connection point of it all. 
+const db = require('./src/config/database');
+const drugRoutes = require('./src/routes/drugRoutes');
+const axios = require('axios');
+const path = require('path');
 
-//make sure you are in the src folder before running the server and double check the database.js to make sure the database name, 'username' and 'password acces has been granted if any issues wti the back end.
 
-// also need an event listener to connect with front end but need to see the html code before linking.
 
-//port
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3100;
+
+//trying to connect to the browser
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+
+app.get('/api/users', (req, res) => {
+  // handle the request and send a response
+});
 
 // Logging middleware
 app.use(morgan('dev'));
@@ -19,6 +30,7 @@ app.use(morgan('dev'));
 // Body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // Database connection
 db.authenticate()
@@ -43,6 +55,17 @@ app.use((error, req, res, next) => {
     }
   });
 });
+//creating an API endpoint
+//also adding some error handling
+app.get('/api/data', (req, res) => {
+  axios.get('http://localhost:3100/data')
+    .then(response => {
+      res.send(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).send('Error fetching data from the front-end');
+    });
+});
 
-//plis work
 app.listen(port, () => console.log(`Server started on port ${port}`));
