@@ -8,6 +8,8 @@
     <title>E-commerce</title>
     <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Raleway">
     <script src="https://kit.fontawesome.com/92d5a3852c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
 
 </head>
 
@@ -31,74 +33,37 @@
     </section>
 
     <section id="hero">
-        <h4>open-source app designed to help users identify potential drug interactions</h4>
-        <h2>easy to use and allows users to quickly check drug interactions</h2>
-        <h1>provides users with detailed information about the potential risks and side effects</h1>
-        <p>constantly being updated and improved by a community of developers and healthcare professionals</p>
+        <h1>Pillpal</h1>
+        <h4>Your pocket-sized pharmacy assistant</h4>
+        <p>Pillpal is a user-friendly mobile app that provides easy access to publicly available FDA data on prescription drugs. With Pillpal, users can quickly look up information on medications, including dosages, side effects, and warnings. The app is designed to help users stay informed and make more informed decisions about their health</p>
         <button>Explore</button>
     </section>
 
-    <form>
-        <h1>woza</h1>
+        
+    <form action="/search" method="POST">
+            <h1>Medication Checker</h1>
+            <input type="text" name="drug" placeholder="Enter a drug name">
+            <button type="submit">Search</button>
+
     </form>
+
+
+
 
     
 
     <footer class="section-p1">
         <div class="col">
             <img class="logo" src="img/logo.png" alt="">
-            <h4>Contact</h4>
-            <p><strong>Address:</strong> 9600 SWEET CEDAR LN, CHARLOTTE NC </p>
-            <p><strong>Phone:</strong> +1 704 553 2289 </p>
-            <p><strong>Hours:</strong> 10:00 - 8:00, Mon - Fri</p>
-            <div class="follow">
-                <h4>Follow Us</h4>
-                <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest-p"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
-            </div>
-        </div>
+            <p>DISCLAIMER: Pillpal provides publicly available FDA data on drugs for informational purposes only. The information contained in this app is not intended to replace professional medical advice, diagnosis, or treatment. Users should not use Pillpal as a substitute for seeking medical advice from a qualified healthcare provider. Always consult with a healthcare provider before taking any medication or making any changes to your current treatment plan.
 
-        <div class="col">
-            <h4>About</h4>
-            <a href="#">About Us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Contact Us</a>
-        </div>
-
-        <div class="col">
-            <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
-            <a href="#">My Wishlist</a>
-            <a href="#">Track My Order</a>
-            <a href="#">Help</a>
-        </div>
-
-        <div class="col install">
-            <h4>Install App</h4>
-            <p>From App Store or Google Play</p>
-            <div class="row">
-                <img src="img/pay/app.jpg" alt="">
-                <img src="img/pay/play.jpg" alt="">
-            </div>
-            <p>Secured Payment Gateways </p>
-            <img src="img/pay/pay.png" alt="">
-        </div>
-
-        <div class="credits">
-            <p>Sincere Arrington-Legere</p>
+                The information provided in this app is based on publicly available data and is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Pillpal does not endorse any specific medication, product, or treatment and is not responsible for any actions taken by users based on the information provided in the app.</p>
+  
         </div>
     </footer>
 
-
     <script src="script.js"></script>
+      
 </body>
 
 </html>
