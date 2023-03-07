@@ -432,7 +432,7 @@ body {
           <div>
               <ul id="navbar">
                   <li><a class="active" href="index.html">Home</a></li>
-                  <li><a href="ggg.html">Contact</a></li>
+                  <li><a href="Contact.html">Contact</a></li>
               </ul>
           </div>
       </section>
@@ -881,7 +881,7 @@ app.post('/search', (req, res) => {
               <div>
                   <ul id="navbar">
                       <li><a class="active" href="index.html">Home</a></li>
-                      <li><a href="ggg.html">Contact</a></li>
+                      <li><a href="Contact.html">Contact</a></li>
                   </ul>
               </div>
           </section>
