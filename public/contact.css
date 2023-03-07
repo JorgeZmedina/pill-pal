@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+  letter-spacing: 0.04em;
+}
+body {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 300;
+  background-color: white;
+}
+.section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg1 {
+  background-color: rgb(201, 249, 255);
+}
+.bg2 {
+  background-color: rgb(191, 208, 224);
+}
+h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0;
+}
+.revealUp {
+  opacity: 0;
+  visibility: hidden;
+}
+.spacer {
+  height: 50vh;
+  background-color: rgb(114, 254, 209);
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: rgb(144, 215, 255);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+ }
+
+
+ .pilllogo {
+    height: 100px;
+    width: 100px;
+ }
+ 
+ #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ #navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+ }
+ 
+ #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+ }
+ 
+ #navbar li a:hover {
+    color: white;
+ }
+ 
+ #navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+ }
+ 
+ #navbar li a i {
+    font-weight: 500;
+    font-size: 20px;
+ }
+
+ #close {
+    display: none;
+ }
+ 
+ #hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 80px;
+    background-image: url("img/pillpal.png");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: top 25% right 0;
+ }
+ 
+ #hero h4 {
+    padding-bottom: 15px;
+ }
+ 
+ #hero h1 {
+    color: #088178;
+ }
+ 
+ /* #hero button {
+    background-image: url("img/button.png");
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+ } */
+ 
+
+
+
+
+ .container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+
+.container:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("img/bg.jpg") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.contact-box{
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+
+.right{
+	padding: 25px 40px;
+}
+
+h2{
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+}
+
+h2:after{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+}
+
+.field{
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea{
+	min-height: 150px;
+}
+/* .btn{
+	width: 100%;
+	padding: 0.5rem 1rem;
+	background-color: rgba(89, 195, 195);
+	color: #fff;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+} */
+
+/* .btn:hover{
+    background-color: rgba(89, 195, 195); 
+ } */
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+
+ /* HERO STARTS HERE */
+ #hero {
+   width: 100%;
+   height: 50vh;
+   background: linear-gradient(rgba(0, 0, 0, 0.624), rgba(0, 0, 0, 0.685)), url('img/abouthero.jpg') no-repeat center / cover;
+   color: white;
+}
+
+.herocontact {
+   width: 90%;
+   height: 100%;
+   max-width: 1000px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.herocontact .info h1 {
+   font-size: 3rem;
+   margin-bottom: 1rem;
+   text-shadow: 1px 1px 2px black;
+}
+
+
+a:hover {
+   opacity: 0.7
+}
+/* HERO ENDS HERE */
+
+
+.wrapper{
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  .wrapper h1{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 48px;
+    color:black;
+    margin-bottom: 25px;
+  }
+  
+  .our_team{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .our_team .team_member{
+    width: 250px;
+    margin: 5px;
+    background: #fff;
+    padding: 20px 10px;
+  }
+  
+  .our_team .team_member .member_img{
+    background: #e9e5fa;  
+    max-width: 190px;
+    width: 100%;
+    height: 190px;
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .our_team .team_member .member_img img{
+    width: 200px;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .our_team .team_member h3{
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    margin: 15px 0 0px;
+  }
+  
+  .our_team .team_member span{
+    font-size: 10px;
+  }
+  
+  .our_team .team_member p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .our_team .team_member .member_img .social_media{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0,0,0,0.65);
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+     transition: all 0.5s ease;
+  }
+  
+
+  
+  
+  
+    
+  
+
+
+/* CONTACT FORM STARTS HERE  */
+.label {
+   padding-top: 10px;
+}
+.formcontainer {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   padding: 30px;
+   }
+   
+   .formitem {
+       /* width: 400px; */
+       height: 400px;
+   }
+   
+   .formform {
+       display: grid;
+       grid-template-rows: repeat(4, 1fr);
+       padding-top: 10px;
+   }
+   
+   .formitem h2 {
+       font-family: 'Oswald', sans-serif;
+       font-size: 3rem;
+   }
+   
+   .formitem h5 {
+       color: #ccc;
+   }
+   
+   .formitem p {
+       color: rgba(98, 108, 102, 0.89);
+       padding-right: 50px;
+   }
+   .textform {
+       border:  rgba(98, 108, 102, 0.509) 3px solid;
+   }
+   
+   ::placeholder {
+       opacity: 0.25;
+   }
+   /* CONACT FORM ENDS HERE */
+
+   /* MEDIA QUERY STARTS HERE */
+   @media (max-width: 500px) {
+      .formcontainer {
+          grid-template-columns: 1fr;
+          }
+          .container {
+              flex-direction: column;
+          }
+    }
+    /* MEDIA ENDS HERE */
+
+    /* FOOTER STARTS HERE */
+
+.footer {
+   background: rgb(144, 215, 255);
+   padding: 50px 0;
+}
+
+.footer .item-social>a {
+   font-size: 24px;
+   width: 40px;
+   height: 40px;
+   line-height: 40px;
+   display: inline-block;
+   text-align: center;
+   border-radius: 50%;
+   border: 1px solid black;
+   margin-left: 10px;
+   margin-top: 22px;
+   color: inherit;
+   opacity: 0.75;
+}
+
+.footer .copyright {
+   margin-top: 14px;
+   margin-bottom: 0;
+   font-size: 13px;
+   opacity: 0.6;
+   color: black;
+}
+
+.footer .item-social {
+   text-align: center;
+}
+
+.footer .item-social>a:hover {
+   opacity: 0.25;
+}
+
+.footer .item-social a {
+   color: black;
+}
+
+.footer .mailinglist {
+   color: black;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   padding-bottom: 20px;
+}
+#Email {
+   padding-right: 20px;
+}
+.submit {
+   margin-top: 10px;
+   background-color:rgb(225, 202, 150);
+}
+
+#aboutus {
+   background-color: rgb(221, 248, 232);
+}
