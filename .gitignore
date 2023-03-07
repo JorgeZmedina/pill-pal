@@ -1,4 +1,5 @@
-.env
-node_modules/
-insert.php
 node_modules
+insert.php
+.env
+index/.DS_Store
+.DS_Store
