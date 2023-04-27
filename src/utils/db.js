@@ -2,10 +2,10 @@ const mysql = require("mysql");
 const { promisify } = require("util");
 //trying to connect to database
 const connection = mysql.createConnection({
-  host: "your-host",
-  user: "your-username",
-  password: "your-password",
-  database: "your-database-name",
+  host: "capellandiana",
+  user: "capellandiana",
+  password: "password",
+  database: "pillpalDB",
 });
 
 const promisifiedQuery = promisify(connection.query).bind(connection);

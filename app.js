@@ -9,14 +9,22 @@ const path = require('path');
 
 
 const app = express();
-const port = process.env.PORT || 3100;
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+const port = process.env.PORT || 3300;
 
 //trying to connect to the browser
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'index')));
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, 'index', 'index.html'));
+// });
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, 'index', 'about.js'));
+// });
 
 
 
@@ -27,9 +35,9 @@ app.get('/api/users', (req, res) => {
 // Logging middleware
 app.use(morgan('dev'));
 
-// Body-parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// Body-parser middleware as json 
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
 
 // Database connection
@@ -48,24 +56,43 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
-  res.status(error.status || 500);
+  res.status(error.status || 501);
   res.json({
     error: {
       message: error.message
     }
   });
 });
-//creating an API endpoint
-//also adding some error handling
-app.get('/api/data', (req, res) => {
-  axios.get('http://localhost:3100/data')
-    .then(response => {
-      res.send(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-      res.status(500).send('Error fetching data from the front-end');
-    });
-});
+
+// app.post('/drugs', (req, res) => {
+//   res.send('something here')
+// }) 
+// axios.post('/drugs', {
+//     name: 'testname',
+//     email: 'testemali',
+//     phone_number: 'test#',
+//     message: 'testmssg'
+  
+// })
+// .then(function (response) {
+//   console.log(response);
+// })
+// .catch(function (error) {
+//   console.log(error);
+// });
+
+
+//return message after submit button
+// app.get('/data', (req, res) => {
+//   axios.get('http://localhost:3100/data')
+//     .then(response => {
+//       res.send(response.data);
+//       console.log('thank you for your feedback!')
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       res.status(500).send('Error fetching data from the front-end');
+//     });
+// });
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

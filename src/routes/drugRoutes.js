@@ -32,9 +32,10 @@ router.get('/:id', async (req, res) => {
 
 // POST a new drug
 router.post('/', async (req, res) => {
-  const { name, description } = req.body;
+  console.log('req.body', req.body)
+  const { name, description, email, phone_number } = req.body;
   try {
-    const newDrug = await Drug.create({ name, description });
+    const newDrug = await Drug.create({ name, description, email, phone_number, message: 'sadfs' });
     res.status(201).json(newDrug);
   } catch (err) {
     console.error(err);
